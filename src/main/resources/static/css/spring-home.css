@@ -1,0 +1,109 @@
+
+body{
+    background-color: rgba(33, 208, 196, 0);
+
+    height: 130px;
+    width: 300px;
+
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.error {
+    background-color: rgba(76, 226, 226, 0.05);
+    color: #e80d0d;
+    width:auto;
+}
+
+.inputbox {
+    background-color: rgba(76, 226, 226, 0.05);
+    color: #333333;
+    width:150px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#808080;
+}
+
+.inputbox:hover {
+    border-width:1px;
+    border-style:solid;
+    border-color:#11A3EA;
+}
+
+.inputbox:focus {
+    border-width:1px;
+    border-style:solid;
+    border-color:#11A3EA;
+    color: #0F4987;
+}
+
+.submitButton {
+    background-color: rgba(0, 255, 0, 0.31);
+    color: #000000;
+    background: rgba(0, 255, 0, 0.31);
+    border: 1px solid #cccccc;
+    text-align: center;
+    width: 100px;
+    padding: 2px 3px 2px 3px;
+    align : "center";
+}
+.removebutton {
+    background-color: rgba(255, 0, 0, 0.51);
+    color: #000000;
+    background: rgba(255, 0, 0, 0.51);
+    border: 1px solid #cccccc;
+    text-align: center;
+    width: 100px;
+    padding: 2px 3px 2px 3px;
+    align : "center";
+}
+.upgradeButton {
+    background-color: rgba(255, 170, 0, 0.51);
+    color: #000000;
+    background: rgba(255, 170, 0, 0.51);
+    border: 1px solid #cccccc;
+    text-align: center;
+    width: 100px;
+    padding: 2px 3px 2px 3px;
+    align : "center";
+}
+.downgradeButton {
+    background-color: rgba(166, 0, 255, 0.4);
+    color: #000000;
+    background: rgba(166, 0, 255, 0.4);
+    border: 1px solid #cccccc;
+    text-align: center;
+    width: 100px;
+    padding: 2px 3px 2px 3px;
+    align : "center";
+}

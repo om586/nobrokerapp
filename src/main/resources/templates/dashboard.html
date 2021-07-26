@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dashboard</title>
+    <link href="../static/css/spring-home.css"
+          th:href="@{css/spring-home.css}" rel="stylesheet" media="screen"/>
+</head>
+
+
+<body>
+<h1 th:text="'Hi, ' + ${username}" ></h1>
+</body>
+</html>

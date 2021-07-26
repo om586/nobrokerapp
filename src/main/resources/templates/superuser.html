@@ -1,0 +1,95 @@
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+      <title>Dashboard</title>
+      <link href="../static/css/spring-home.css"
+            th:href="@{css/spring-home.css}" rel="stylesheet" media="screen"/>
+</head>
+
+
+<body>
+        <div>
+             <div th:if="${error != ''}" th:text="${error}" class=".error"></div>
+             <button class="submitButton" onclick="myFunction()">Add New User</button>
+             <script>
+                    function myFunction() {
+                        var element = document.getElementById("demo");
+                        element.style.display = "block";
+                    }
+             </script>
+        <div style="display:none" id="demo">
+             <form method='post'  th:action="@{/registerUser}" >
+                <table>
+                    <tr>
+                        <td>User:</td>
+                        <td><input type='text'  th:value="${username}" name='username'
+                                   value='' maxlength="16" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type='password' th:value="${password}" name='password'
+                                   minlength="6" maxlength="16" required/></td>
+                    </tr>
+
+                    <tr>
+                        <td><input name="submit" type="submit" value="register" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+
+      <table class="styled-table">
+          <thead>
+              <tr>
+                  <th> Name </th>
+                  <th>  </th>
+              </tr>
+          </thead>
+      <tbody>
+            <tr th:if="${users.empty}">
+                  <td colspan="2"> No users registered </td>
+            </tr>
+            <tr th:each="user : ${users}">
+
+                  <td><span th:text="${user.username}"> Name </span></td>
+                  <td>
+                      <form method="post" th:action="@{/deleteUser}">
+                          <input type="hidden" name="username" id="userName" th:value="${user.username}" />
+
+                          <button type="submit" name="action" value="remove" class="removebutton">Delete User</button>
+                      </form>
+                  </td>
+                <td th:if="${user.role == 'user'}">
+                    <form method="post" th:action="@{/changeRole}">
+                        <input type="hidden" name="username" id="userName" th:value="${user.username}" />
+                        <input type="hidden" name="role" id="role" th:value="${user.role}" />
+
+                        <button type="submit" name="action" value="submit" class="upgradeButton">Make Admin</button>
+                    </form>
+                </td>
+                <td th:if="${user.role == 'superuser'}">
+                    <form method="post" th:action="@{/changeRole}">
+                        <input type="hidden" name="username" id="userName" th:value="${user.username}" />
+                        <input type="hidden" name="role" id="role" th:value="${user.role}" />
+
+                        <button type="submit" name="action" value="remove" class="downgradeButton">Remove Admin</button>
+                    </form>
+                </td>
+
+            </tr>
+
+    </tbody>
+</table>
+
+</body>
+
+
+
+</html>
