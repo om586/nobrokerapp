@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Login</title>
+  <link href="../static/css/spring-home.css"
+        th:href="@{css/spring-home.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<form name="f" action="/userlogin" method="POST">
+  <table>
+    <tr>
+      <td>User:</td>
+      <td><input type="text" name="username" value="" maxlength="16" required class="inputbox"></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" name="password" maxlength="16" required  class="inputbox"/></td>
+    </tr>
+    <tr>
+      <td><input name="submit" type="submit" value="submit" class="submitButton"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

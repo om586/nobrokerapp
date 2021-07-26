@@ -2,7 +2,6 @@ package com.nobroker.userlogin.services;
 
 import com.nobroker.userlogin.entities.UserEntity;
 import com.nobroker.userlogin.repositories.UserRepository;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
